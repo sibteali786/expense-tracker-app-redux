@@ -28,7 +28,7 @@ export const AddTransaction = () => {
             className="p-3 border-2 rounded-md border-gray-400"
           />
         </div>
-        <button className="px-4 py-2 border-gray-500 border-2 rounded-md my-4 transition-all hover:bg-gray-800 hover:text-white duration-200">
+        <button className="px-4 py-2 border-gray-500 border-2 rounded-md my-4 transition-all hover:bg-gray-800 hover:text-white duration-200 hover:border-transparent">
           Add Transaction
         </button>
       </form>
