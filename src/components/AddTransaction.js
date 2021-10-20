@@ -6,20 +6,31 @@ export const AddTransaction = () => {
   };
   return (
     <div>
-      <h3>Add new transaction</h3>
+      <div className="text-3xl font-semibold my-4">Add new transaction</div>
+      <hr />
       <form onSubmit={onSubmit}>
-        <div className="form-control">
+        <div className="text-2xl flex justify-center items-start flex-col space-y-4">
           <label htmlFor="text">Text</label>
-          <input type="text" placeholder="Enter text..." />
+          <input
+            type="text"
+            className="p-3 border-2 rounded-md border-gray-400"
+            placeholder="Enter text..."
+          />
         </div>
-        <div className="form-control">
+        <div className="text-2xl flex justify-center items-start flex-col space-y-4 mt-4">
           <label htmlFor="amount">
             Amount <br />
             (negative - expense, positive - income)
           </label>
-          <input type="number" placeholder="Enter amount..." />
+          <input
+            type="number"
+            placeholder="Enter amount..."
+            className="p-3 border-2 rounded-md border-gray-400"
+          />
         </div>
-        <button className="btn">Add transaction</button>
+        <button className="px-4 py-2 border-gray-500 border-2 rounded-md my-4 transition-all hover:bg-gray-800 hover:text-white duration-200">
+          Add Transaction
+        </button>
       </form>
     </div>
   );
