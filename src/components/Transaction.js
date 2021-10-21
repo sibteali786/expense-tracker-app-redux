@@ -3,12 +3,22 @@ import React from "react";
 export const Transaction = ({ transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";
   return (
-    <li className={transaction.amount < 0 ? "minus" : "plus"}>
-      {transaction.text}
-      <span>
-        {sign}${Math.abs(transaction.amount)}
-      </span>
-      <button className="">x</button>
-    </li>
+    <div
+      className={`${
+        transaction.amount < 0 ? "bg-red-400" : "bg-green-400"
+      } shadow-sm rounded-md flex justify-between items-center hover:scale-105 transition-transform duration-300  transform`}
+    >
+      <li
+        className={` py-3 px-8 flex justify-between items-center w-full space-x-28  `}
+      >
+        <div>{transaction.text}</div>
+        <span>
+          {sign}${Math.abs(transaction.amount)}
+        </span>
+      </li>
+      <button className="bg-gray-900 rounded-r-md px-4 py-3 text-white">
+        x
+      </button>
+    </div>
   );
 };

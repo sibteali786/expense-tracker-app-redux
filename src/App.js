@@ -1,5 +1,11 @@
 import "./App.css";
-import { Header, Balance, IncomeExpenses, AddTransaction } from "./components";
+import {
+  Header,
+  Balance,
+  IncomeExpenses,
+  AddTransaction,
+  TransactionList,
+} from "./components";
 function App() {
   return (
     <div className="max-w-full max-h-full h-full w-full bg-gray-100">
@@ -7,6 +13,7 @@ function App() {
         <Header />
         <Balance />
         <IncomeExpenses />
+        <TransactionList />
         <AddTransaction />
       </div>
     </div>
