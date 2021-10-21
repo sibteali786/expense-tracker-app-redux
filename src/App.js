@@ -1,11 +1,6 @@
 import "./App.css";
-import {
-  Header,
-  Balance,
-  IncomeExpenses,
-  AddTransaction,
-  TransactionList,
-} from "./components";
+import { TransactionListContainer } from "./containers/TransactionListContainer";
+import { Header, Balance, IncomeExpenses, AddTransaction } from "./components";
 function App() {
   return (
     <div className="max-w-full max-h-full h-full w-full bg-gray-100">
@@ -13,7 +8,7 @@ function App() {
         <Header />
         <Balance />
         <IncomeExpenses />
-        <TransactionList />
+        <TransactionListContainer />
         <AddTransaction />
       </div>
     </div>

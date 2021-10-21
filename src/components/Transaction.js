@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";
   return (
     <div
@@ -22,3 +22,5 @@ export const Transaction = ({ transaction }) => {
     </div>
   );
 };
+
+export default Transaction;
