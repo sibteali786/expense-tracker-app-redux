@@ -1,12 +1,15 @@
 import { AddTransaction } from "../components";
 import { connect } from "react-redux";
 import { addNewTransaction } from "../store/transactions/action";
+import { bindActionCreators } from "redux";
 
 export const mapDispatchToProp = (dispatch) => {
-  return {
-    onSubmitHandler: (text, amount) =>
-      dispatch(addNewTransaction(text, amount)),
-  };
+  return bindActionCreators(
+    {
+      onSubmitHandler: (text, amount) => addNewTransaction(text, amount),
+    },
+    dispatch
+  );
 };
 
 export const AddTransactionContainer = connect(
