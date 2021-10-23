@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const AddTransaction = () => {
+export const AddTransaction = ({ onSubmitHandler }) => {
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState(0);
   const onSubmit = (e) => {
     e.preventDefault(); // stops submit event to submit form
+    onSubmitHandler(text, amount);
   };
   return (
     <div>
@@ -14,6 +17,8 @@ export const AddTransaction = () => {
           <input
             type="text"
             className="p-3 border-2 rounded-md border-gray-400"
+            value={text}
+            onChange={(e) => setText(e.target.value)} // This allows us to trigger setText upon any change in value we type. e for event
             placeholder="Enter text..."
           />
         </div>
@@ -26,6 +31,8 @@ export const AddTransaction = () => {
             type="number"
             placeholder="Enter amount..."
             className="p-3 border-2 rounded-md border-gray-400"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
           />
         </div>
         <button className="px-4 py-2 border-gray-500 border-2 rounded-md my-4 transition-all hover:bg-gray-800 hover:text-white duration-200 hover:border-transparent">

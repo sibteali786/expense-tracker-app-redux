@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import { TRANSACTION_ADDED } from "./action";
 
 export const initialTransactions = [
   { id: uuidv4(), text: "Flower", amount: -20 },
@@ -8,6 +9,10 @@ export const initialTransactions = [
 ];
 
 export const reducer = (state = initialTransactions, action) => {
+  if (action.type === TRANSACTION_ADDED) {
+    const transaction = { id: uuidv4(), ...action.payload };
+    return [...state, transaction];
+  }
   return state;
 };
 
