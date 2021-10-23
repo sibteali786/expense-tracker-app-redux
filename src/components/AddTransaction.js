@@ -6,7 +6,6 @@ export const AddTransaction = ({ onSubmitHandler }) => {
   const onSubmit = (e) => {
     e.preventDefault(); // stops submit event to submit form
     onSubmitHandler(text, amount);
-    
   };
   return (
     <div>
