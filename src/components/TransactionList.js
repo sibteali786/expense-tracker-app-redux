@@ -9,7 +9,7 @@ export const TransactionList = ({ transactions }) => {
       <ul className="flex justify-center items-start flex-col space-y-4">
         {transactions.map((transaction) => (
           <TransactionContainer
-            transaction={transaction}
+            {...transaction}
             key={transaction.id}
           ></TransactionContainer>
         ))}
