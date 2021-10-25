@@ -1,13 +1,12 @@
 import { createSelector } from "reselect";
 
-export let selectTransactions = [];
-selectTransactions = (state)=>{
-  return state.transactions;
-}
+export const selectTransactions = (state) => {
+  return { transactions: state.transactions };
+};
 console.log(selectTransactions);
 export const selectAmount = selectTransactions.map((transaction) =>
-    parseInt(transaction.amount, 10)
-  );
+  parseInt(transaction.amount, 10)
+);
 
 export const selectTotalTransactions = createSelector(
   [selectAmount],

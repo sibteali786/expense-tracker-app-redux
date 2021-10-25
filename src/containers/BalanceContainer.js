@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { Balance } from "../components";
 // import { selectTotalTransactions } from "../store/transactions/selector";
 
+
 export const mapStateToProps = (state) => {
   //   const total = selectTotalTransactions(state);
   const transactions = state.transactions;
